@@ -1,10 +1,11 @@
 class Bullet {
-  constructor(x, y, speed) {
+  constructor(x, y, speed, c) {
     this.pos = createVector(x, y);
     this.hastighet = speed;
     this.w = 5
     this.h = 15
     this.skalSlettes = false;
+    this.c = c
   }
 
   setHastighet(hastighet) {
@@ -14,7 +15,7 @@ class Bullet {
 
 
   show() {
-    fill(255, 0, 0);
+    fill(this.c);
     rect(this.pos.x, this.pos.y, this.w, this.h)
   }
 

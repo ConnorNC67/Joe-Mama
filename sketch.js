@@ -17,6 +17,8 @@ let level = 1;
 let myStorage = window.localStorage;
 let liv = 3;
 
+
+
 function getHighscore() {
   return myStorage.getItem("highscore")
 }
@@ -37,7 +39,6 @@ function preload() {
   liv1Image = loadImage(liv1PNG);
   menyImage = loadImage(menyPNG);
 
-
 }
 
 
@@ -53,7 +54,8 @@ function setupAliens() {
 }
 
 function setup() {
-  createCanvas(1505, 668);
+  var canvas = createCanvas(1505, 668);
+  canvas.parent("gamearea")
   spiller = new Spiller(710, 600);
   setupAliens();
 }
@@ -195,7 +197,8 @@ function keyPressed() {
 
   if (keyCode === UP_ARROW) {
     if (bullets.length <= 3) {
-      bullets.push(new Bullet(spiller.pos.x + 25, spiller.pos.y, 10));
+    createLasersound().play();
+      bullets.push(new Bullet(spiller.pos.x + 25, spiller.pos.y, 10, color(255, 0, 0)));
     }
   }
 
@@ -240,12 +243,17 @@ function keyPressed() {
     spiller.setHastighet(-4);
 
   }
-  if (key === ' ') {
+  if (key === 'f') {
     spiller.setHastighet(0);
     spiller.setHastighetopp(0);
   }
   if (key === 'p') {
     meny = false
+    createbuttonsound().paly();
+  }
+  if (key === 'o') {
+    meny = true
+    createbuttonsound().paly();
   }
 
 }

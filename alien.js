@@ -40,7 +40,7 @@ class Alien {
 
   update() {
     if (random(1000) < 0.1 + level / 5) {
-      alienBullets.push(new Bullet(this.pos.x, this.pos.y, -4))
+      alienBullets.push(new Bullet(this.pos.x, this.pos.y, -4, color(0, 255, 0)))
     }
 
     this.pos.x += this.hastighet;
