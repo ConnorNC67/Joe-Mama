@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+
+</head>
+
+<body>
+  <script>
+    let minVariabel = 18;
+    let mittTall2 = 12;
+    let minTekst = "Heisann!";
+    let liste = [];
+    let farge = [];
+
+    liste.push("hest", "ape", "hund", "katt");
+
+    farge.push("sort", "hvit", "blå", "rød", "grønn")
+
+    console.log("minVariabel + mittTall2 har verdien: " + (minVariabel + mittTall2));
+    console.log("minTekst har verdien: " + minTekst)
+    console.log("liste har verdien: " + liste)
+    console.log(liste)
+    console.log(liste.length)
+    console.log(farge)
+
+    for (let index = 0; index < liste.length; index++) {
+      console.log(index + ": " + liste[index])
+    }
+    for (let index = liste.length - 1; index >= 0; index--) {
+      console.log(index + ": " + liste[index])
+
+
+    }
+    for (let indexa = 0; indexa < liste.length; indexa++) {
+
+
+      for (let index = 0; index < farge.length; index++) {
+        console.log(index + ": " + (liste[indexa] + " - " + farge[index]))
+      }
+    }
+  </script>
+
+</body>
+
+</html>
